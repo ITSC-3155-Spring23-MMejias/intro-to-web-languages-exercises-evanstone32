@@ -1,0 +1,29 @@
+<body>
+    
+    <input type="text" id="txt-price" placeholder="Enter the price of the item"> <!--places the text inside of the text box-->
+    <input type="text" id="txt-quantity" placeholder="Enter the quanity of the item"> <!--places the text inside of the text box-->
+    <button id="btn-submit">Calculate</button> <!--places the calculate button to-->
+    <div id="output"></div> 
+
+    <script> //declares that its a script
+    var priceInput = document.getElementById('txt-price'); //sets priceInput equal to the element entered in txt-price
+    var quantityInput = document.getElementById('txt-quantity'); //sets quantity input equal to the elemnt entered in txt-quantity
+    var submitBtn = document.getElementById('btn-submit'); //sets submitBtn equal to the calculate button
+    var output = document.getElementById('output'); //sets the outbut equal to the div output
+
+    submitBtn.addEventListener('click', function () { // creates a function to do something when the button is clicked
+        var price = priceInput.value; //sets price equal to the value of price input
+        var quanity = quantityInput.value; // sets the quantity equal to the value of quantity input
+        price = +price; //adds price to intself
+        quanity = +quanity; //adds quantity to itself
+        if (Number.isNaN(price) || Number.isNaN(quanity)) { //creates an if statement to see if either number is a number or not
+          output.innerHTML = 'Invalid input'; 
+          return;
+        }
+        var totalPrice = price * quanity; // calulates the total by mutliplying the price and quantity
+        totalPrice = Math.round(totalPrice * 100) / 100; //round the function to the nearest dollar
+        output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice; //ourputs the price, quantity, and total
+    });
+    </script>
+
+</body>

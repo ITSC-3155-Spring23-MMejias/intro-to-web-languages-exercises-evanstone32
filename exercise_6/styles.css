@@ -1,0 +1,15 @@
+body{
+    font-family: cursive;
+    background-color: blue;
+}
+
+#main-title
+{
+    font-style: bold;
+    text-align: center;
+}
+
+#content
+{
+    margin-bottom: 12px;
+}
